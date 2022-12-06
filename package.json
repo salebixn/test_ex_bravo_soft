@@ -2,7 +2,7 @@
   "name": "test_ex_bravo_soft",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +15,16 @@
   "bugs": {
     "url": "https://github.com/salebixn/test_ex_bravo_soft/issues"
   },
-  "homepage": "https://github.com/salebixn/test_ex_bravo_soft#readme"
+  "homepage": "https://github.com/salebixn/test_ex_bravo_soft#readme",
+  "dependencies": {
+    "@koa/router": "^12.0.0",
+    "ejs": "^3.1.8",
+    "koa": "^2.14.0",
+    "koa-body": "^6.0.1",
+    "koa-views": "^8.0.0",
+    "pg": "^8.8.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.26.0"
+  },
+  "type": "module"
 }
