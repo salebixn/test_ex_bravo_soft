@@ -34,6 +34,22 @@
                     </div>
                 </nav>
 
+                <table class="table table-success table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">Наименование документа</th>
+                        <th scope="col">Количество заявок</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <% for(var i = 0; i < (context.length); i++) {%>
+                            <tr> 
+                                <td><%= context[i].docsCountId.doc_name %></td>
+                                <td><%= context[i].docsCountId.count %></td>
+                            </tr>
+                        <%}%>
+                    </tbody>
+                  </table>
                 
             </div>
         </div>

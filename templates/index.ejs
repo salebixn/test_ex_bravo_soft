@@ -35,9 +35,9 @@
                 </nav>
 
                 <h2>Форма для заявки</h2>
-                <form method="post">
+                <form method="post" action="/form/upload/">
                     <div class="input-group mb-3">
-                        <input type="text" name="constructor">
+                        <input type="hidden" name="id_human">
                         
                         <select class="form-select" id="inputGroupSelect01">
                             <option>Кто вы</option>
@@ -68,25 +68,8 @@
 
     <script>
         $('#inputGroupSelect01').on('change', function() {
-            $('input[name="constructor"]').val(this.value);
+            $('input[name=id_human]').val(this.value);
         });
-
-    </script>
-    
-    <script>
-        data = $("input[name='doc']").val();
-        console.log(data);
-        $("input[name='submit']").on('click', $.ajax( { // ajax запрос
-            type: "POST", // с помощью get
-            url: '/form/upload/', // по адресу
-            data: { array: data }, // отправляемые данные 
-            success: function(response) {
-                console.log(response);
-            },
-            error: function(response) {
-                console.log(response);
-            },
-        }));
     </script>
 </body>
 

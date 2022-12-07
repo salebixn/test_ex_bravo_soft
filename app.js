@@ -5,8 +5,8 @@ import {Sequelize} from 'sequelize'
 import router from './routes/routes.js'
 import Path from './config.js'
 import constructors from './models/constructors.js'
-import applications from './models/applications.js'
 import docs from './models/docs.js'
+import docs_count from './models/docs_count.js'
 
 const app = new Koa();
 
@@ -19,15 +19,15 @@ try {
 }
 
 
-constructors.hasMany(applications);
-applications.belongsTo(constructors);
-docs.hasMany(applications);
-applications.belongsTo(docs);
+constructors.hasMany(docs);
+docs.belongsTo(constructors);
+docs_count.hasMany(docs);
+docs.belongsTo(docs_count);
 
 // sync models with db
 await constructors.sync({ force: false });
-await applications.sync({ force: false });
 await docs.sync({ force: false });
+await docs_count.sync({ force: false });
 
 // templates
 app.use(views(Path('/templates'), { extension: 'ejs' }));

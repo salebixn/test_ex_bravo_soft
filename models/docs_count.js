@@ -1,23 +1,21 @@
 import {Sequelize, DataTypes} from 'sequelize'
 const sequelize = new Sequelize('postgres://el3m3nt0:123456@localhost:5432/el3m3nt0')
 
-const applications = sequelize.define('applications', {
+const docs_count = sequelize.define('docs_count', {
     id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true
-    },  
+    },
 
-    title: {
-      type: DataTypes.STRING,
-      allowNull: false,
+    doc_name: {
+        type: DataTypes.STRING,
+        allowNull: false
     },
-    
-    lastname: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    
+
+    count: {
+      type: DataTypes.INTEGER
+  }
 }, {timestamps: false});
 
-export default applications
+export default docs_count

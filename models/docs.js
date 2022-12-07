@@ -6,11 +6,6 @@ const docs = sequelize.define('docs', {
       type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true
-    },
-
-    doc_name: {
-        type: DataTypes.STRING,
-        allowNull: false
     }
 }, {timestamps: false});
 
