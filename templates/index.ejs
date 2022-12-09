@@ -52,11 +52,16 @@
 
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" name="doc" placeholder="Название документа" aria-label="Название документа"
-                            aria-describedby="basic-addon1">
+                            aria-describedby="basic-addon1" required>
                     </div>
 
-                    <input type="submit" name="submit" value="submit">
+                    <input class="btn btn-success" type="submit" name="submit">
                 </form>
+                <% if(error) {%>
+                    <div class="alert alert-danger" role="alert">
+                        <%= error %>
+                    </div>
+                <%}%>
             </div>
         </div>
     </div>
