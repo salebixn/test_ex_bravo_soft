@@ -1,6 +1,8 @@
 import {sequelize} from './config.js'
 import {constructors, docs_count, docs} from './models/models.js'
 
+const FORCE = false;
+
 const migrate = async () => {
     try {
         constructors.hasMany(docs);
@@ -9,9 +11,9 @@ const migrate = async () => {
         docs.belongsTo(docs_count);
 
         // sync models with db
-        await constructors.sync({ force: false });
-        await docs.sync({ force: false });
-        await docs_count.sync({ force: false });
+        await constructors.sync({ force: FORCE });
+        await docs.sync({ force: FORCE });
+        await docs_count.sync({ force: FORCE });
 
         console.log('\nmigrate succesful');
     } catch (e) {
