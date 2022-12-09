@@ -2,6 +2,6 @@
 
 npm i
 
-node app
-
 add environment variables to .env
+
+node app
